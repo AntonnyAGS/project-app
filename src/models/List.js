@@ -10,7 +10,10 @@ const ListSchema = new mongoose.Schema({
         ref: "User"
     },
     content: {
-        type: [String],
+        type: [{
+            name: String,
+            url: String
+        }],
         require: true
     },
     createdAt: {

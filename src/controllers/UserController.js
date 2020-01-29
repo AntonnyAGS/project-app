@@ -1,14 +1,12 @@
 const User = require ("../models/User");
-const mongoose = require ("mongoose");
 
 module.exports = {
     async store(req,res){
        // Instanciando (criando) novo user
-       const user = await User.create(req.body);
+       const userCreating = await User.create(req.body);
 
        // Retornando cód. de created (201) e o .json do user criado
-       return res.status(201).json(user);
-       
+       return res.status(201).json(userCreating);
     },
     async index(req, res){
         // Buscando todos os users
@@ -18,15 +16,15 @@ module.exports = {
     },
     async show(req, res){
         //Buscando user pelo id
-        const user = await User.findById(req.params.id);
+        const userShowing = await User.findById(req.params.id);
 
-        return res.json(user);
+        return res.json(userShowing);
     },
     async update(req,res){
         //Buscando pelo id e atualizando
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        const userUpdating = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
 
-        return res.json(user);
+        return res.json(userUpdating);
     },
     async remove(req,res){
         //Buscando pelo id e removendo
