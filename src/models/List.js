@@ -9,13 +9,14 @@ const ListSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    content: {
-        type: [{
-            name: String,
-            url: String
-        }],
-        require: true
-    },
+    content:[{
+      name:{
+          type: String
+      },
+      url:{
+          type:String
+      }
+    }],
     createdAt: {
         type: Date,
         default: Date.now

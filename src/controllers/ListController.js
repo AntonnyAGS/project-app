@@ -2,7 +2,7 @@ const List = require ("../models/List");
 
 
 module.exports = {
-    async create(req,res){
+    async store(req,res){
         // Instanciando e criando lista
         const listCreating = await List.create(req.body);
 
