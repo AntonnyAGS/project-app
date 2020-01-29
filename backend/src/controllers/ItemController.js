@@ -35,7 +35,7 @@ module.exports = {
         array.forEach((item) => item._id == _id ? itemSelected = item : null);
         let position = array.indexOf(itemSelected);
 
-        const newArray = list.content.splice(position,1);
+        list.content.splice(position,1);
         await list.save();
         return res.json(list);
     }
